@@ -1,3 +1,19 @@
+server:
+  port: ${PORT:8080}
+
+
 spring:
   application:
     name: Scoring
+
+  r2dbc:
+    host: ${DB_HOST}
+    port: ${DB_PORT}
+    database: ${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    pool:
+      initial-size: 10
+      max-size: 20
+      max-idle-time: 30m
+      validation-query: SELECT 1
